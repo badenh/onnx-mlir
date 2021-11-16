@@ -226,7 +226,6 @@ private:
       const MultiDialectBuilder<KrnlBuilder, MathBuilder> &create) const {
     OpBuilder builder = create.krnl.getBuilder();
     Value index = create.krnl.findIndex(inputElem, pHash.G, pHash.V, pHash.len);
-
     std::tuple<Value, Value> res;
     TypeSwitch<Type>(elementType)
         .Case<IntegerType>([&](IntegerType type) {
